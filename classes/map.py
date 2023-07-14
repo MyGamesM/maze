@@ -1,6 +1,7 @@
 from .tile import Tile
 from .tile_types import tileTypes
 from .tile_generator import TileGenerator
+from random import randint
 
 class Map():
     def __init__(self, width: int, height: int) -> None:
@@ -9,7 +10,7 @@ class Map():
         self.tg = TileGenerator()
 
         self.map = [[Tile(4) for _ in range(width)] for _ in range(height)]
-        self.setTile(0, 0, Tile(1))
+        self.setTile(0, 0, Tile(randint(0, 3)))
 
     def getTile(self, x: int, y: int) -> Tile:
         return self.map[y][x]
@@ -44,7 +45,6 @@ class Map():
                 
                 out.append(x)
             out.append("+" + ("-+-+" * self.width))
-
 
         for i in range(len(out)):
             print(out[i])

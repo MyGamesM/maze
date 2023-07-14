@@ -6,7 +6,7 @@ os.system('clear')
 
 class App():
     def __init__(self) -> None:
-        self.map = Map(4, 4)
+        self.map = Map(8, 4)
 
         self.input = int(input("1: Single\n2: Loop\n$ "))
 
